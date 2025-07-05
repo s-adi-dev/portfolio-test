@@ -42,7 +42,6 @@ interface Card {
   description: string;
   thumbnail?: string;
   projectUrl: string;
-  tags?: string[];
 }
 
 interface Education extends DateRange {
@@ -89,6 +88,8 @@ interface PortfolioConfig {
 
   // Footer Marquee Items
   footerMarquee: string[];
+
+  includeGitHubInProjects: boolean;
 }
 
 // Utility types for better type inference

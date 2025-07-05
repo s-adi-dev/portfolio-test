@@ -1,13 +1,20 @@
 "use client";
 import { DateDisplay } from "@/components/ui/date-display";
-import data from "@/lib/config/portfolio-data";
 import {
+  default as data,
+  default as portfolioData,
+} from "@/lib/config/portfolio-data";
+import {
+  Card,
   Education,
   PersonalInfo,
   Skills,
+  SocialPlatform,
   WorkExperience,
 } from "@/lib/config/portfolio-types";
-import { ArrowDownToLine, Mail, MapPin } from "lucide-react";
+import ProjectData from "@/lib/config/project-data";
+import Star from "@/public/svg/star.svg";
+import { ArrowDownToLine, Link as LinkIcon, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 
 // Header Components
@@ -195,6 +202,71 @@ function EducationSection({ education }: EducationSectionProps) {
   );
 }
 
+interface ProjectSectionProps {
+  projects: Card[];
+}
+
+function ProjectSection({ projects }: ProjectSectionProps) {
+  const githubLink = portfolioData.socialLinks?.find(
+    (e) => e.platform === SocialPlatform.GITHUB,
+  );
+  return (
+    <div className="px-spacer border-y border-y-borders print:border-y-transparent">
+      <div className="p-spacer flex flex-col gap-8 break-inside-avoid border-b border-b-borders last:border-b-0">
+        <h2 className="text-xl font-medium text-accent">Featured Projects</h2>
+        <div className="flex flex-col gap-6">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="flex flex-col gap-2 items-start pb-6 border-b border-b-borders last:border-b-0"
+            >
+              <p className="text-lg">{project.title}</p>
+              <p className="text-muted text-sm">{project.description}</p>
+              <div className="text-sm max-w-full">
+                <Link
+                  href={project.projectUrl}
+                  target="_blank"
+                  className="group flex gap-2 items-center pl-2 pr-3 py-1 bg-neutral-800 rounded-full"
+                >
+                  <LinkIcon
+                    size={12}
+                    className="text-accent print:text-black transition-transform duration-500 ease-quint group-hover:rotate-[180deg]"
+                  />
+                  <span className="whitespace-nowrap overflow-hidden overflow-ellipsis">
+                    {project.projectUrl}
+                  </span>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex gap-4 flex-wrap gap-y-4">
+          <div className="flex items-center gap-2">
+            <Star />
+            <p>
+              {"see all my projects on my "}
+              <Link className="text-accent" href="/">
+                portfolio
+              </Link>
+            </p>
+          </div>
+          {githubLink && (
+            <div className="flex items-center gap-2">
+              <Star />
+              <p>
+                {"See all my open-source projects on my "}
+                <Link className="text-accent" href={githubLink.url}>
+                  GitHub
+                </Link>
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 interface SkillsSectionProps {
   skills: Skills;
 }
@@ -323,6 +395,7 @@ export default function ResumePage() {
     <ResumeLayout>
       <ResumeHeader personalInfo={data.personalInfo} />
       <ExperienceSection workExperience={data.workExperience} />
+      <ProjectSection projects={ProjectData} />
       <EducationSection education={data.education} />
       <SkillsSection skills={data.skills} />
     </ResumeLayout>

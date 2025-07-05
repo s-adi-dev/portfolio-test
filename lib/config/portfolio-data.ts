@@ -2,11 +2,11 @@ import { PortfolioConfig, SocialPlatform } from "./portfolio-types";
 
 const portfolioData: PortfolioConfig = {
   personalInfo: {
-    firstName: "ADITYA",
-    lastName: "SINGH",
-    title: "Full Stack Developer",
+    firstName: "Aditya",
+    lastName: "Singh",
+    title: "Bakchod Developer",
     location: "Mumbai, India",
-    email: "aditya@example.com",
+    email: "sr.aditya.dev@gmail.com",
   },
 
   content: {
@@ -119,6 +119,8 @@ const portfolioData: PortfolioConfig = {
     "Linux Enthusiast",
     "Weeb",
   ],
+
+  includeGitHubInProjects: true,
 };
 
 export default portfolioData;
