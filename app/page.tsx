@@ -1,8 +1,14 @@
-import { About, Footer, Header, Hero, Skills } from "@/components/sections";
-import Experience from "@/components/sections/experience";
-import FooterMarquee from "@/components/sections/footer-marquee";
-import Project from "@/components/sections/projects";
-import Socials from "@/components/sections/socials";
+import {
+  About,
+  Experience,
+  Footer,
+  FooterMarquee,
+  Header,
+  Hero,
+  Project,
+  Skills,
+  Socials,
+} from "@/components/sections";
 import { GridLines } from "@/components/ui/grid-utils";
 import { PreLoader } from "@/components/ui/preloader";
 import SmoothScrolling from "@/components/ui/smoothScrolling";

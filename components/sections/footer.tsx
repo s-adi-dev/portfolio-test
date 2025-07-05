@@ -127,16 +127,17 @@ const FooterGridContent = () => {
   return (
     <GridWrapper className="relative z-ui mb-10 gap-10 mb-max flex-1">
       <div className="flex flex-col gap-y-10 px-spacer max-md:text-center">
-        <div className="flex flex-col gap-2 md:gap-4">
-          <p className="shadow-black text-muted">SOCIAL</p>
-          <div className="flex gap-4 max-md:justify-center text-sm">
-            {/* Your existing social links */}
-            {portfolioData.socialLinks.length &&
-              portfolioData.socialLinks.map((platform) => (
+        {portfolioData.socialLinks.length > 0 && (
+          <div className="flex flex-col gap-2 md:gap-4">
+            <p className="shadow-black text-muted">SOCIAL</p>
+            <div className="flex gap-4 max-md:justify-center text-sm">
+              {/* Your existing social links */}
+              {portfolioData.socialLinks.map((platform) => (
                 <SocialItem key={platform.platform} data={platform} />
               ))}
+            </div>
           </div>
-        </div>
+        )}
         <div className="flex flex-col gap-2 md:gap-4">
           <p className="shadow-black text-muted">EMAIL</p>
           <Link

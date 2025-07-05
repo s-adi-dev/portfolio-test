@@ -17,18 +17,22 @@ import { TypeHead } from "../ui/typehead";
 
 export default function Socials() {
   return (
-    <div id="socials" className="py-16">
-      <div className="flex justify-center">
-        <TypeHead content="SOCIALS" mainClassName="mx-spacer" />
-      </div>
-      <GridSeperator />
-      {/* Original list design */}
-      <ul className="relative font-monorama text-center lg:text-lg xl:text-xl">
-        {portfolioData.socialLinks.map((platform) => (
-          <SocialItem key={platform.platform} data={platform} />
-        ))}
-      </ul>
-    </div>
+    <>
+      {portfolioData.socialLinks.length > 0 && (
+        <div id="socials" className="py-16">
+          <div className="flex justify-center">
+            <TypeHead content="SOCIALS" mainClassName="mx-spacer" />
+          </div>
+          <GridSeperator />
+          {/* Original list design */}
+          <ul className="relative font-monorama text-center lg:text-lg xl:text-xl">
+            {portfolioData.socialLinks.map((platform) => (
+              <SocialItem key={platform.platform} data={platform} />
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
   );
 }
 

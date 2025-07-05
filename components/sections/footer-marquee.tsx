@@ -116,21 +116,25 @@ export default function FooterMarquee() {
   ];
 
   return (
-    <div className="bg-accent text-background rounded-t-md overflow-hidden py-4 -mb-8">
-      <div
-        ref={marqueeRef}
-        className="w-full flex items-center whitespace-nowrap will-change-transform"
-        style={{ transform: "translateX(0px)" }}
-      >
-        {duplicatedItems.map((item, index) => (
-          <li
-            key={`${item}-${index}`}
-            className="text-4xl lg:text-5xl xl:text-6xl font-monument uppercase pr-4 list-none"
+    <>
+      {duplicatedItems.length > 0 && (
+        <div className="bg-accent text-background rounded-t-md overflow-hidden py-4 -mb-8">
+          <div
+            ref={marqueeRef}
+            className="w-full flex items-center whitespace-nowrap will-change-transform"
+            style={{ transform: "translateX(0px)" }}
           >
-            {item} -
-          </li>
-        ))}
-      </div>
-    </div>
+            {duplicatedItems.map((item, index) => (
+              <li
+                key={`${item}-${index}`}
+                className="text-4xl lg:text-5xl xl:text-6xl font-monument uppercase pr-4 list-none"
+              >
+                {item} -
+              </li>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 }

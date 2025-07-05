@@ -4,7 +4,12 @@ import { MatrixButton } from "../ui/button";
 import { GridWrapper } from "../ui/grid-utils";
 import DynamicMarquee from "../ui/marquee";
 
-export const Skills = () => {
+export default function Skills() {
+  const originalItems: string[] = [
+    ...portfolioData.skills.languages,
+    ...portfolioData.skills.tools,
+    ...portfolioData.skills.technologies,
+  ];
   const marqueeItems: string[] = [
     ...portfolioData.skills.languages,
     "PIKACHU",
@@ -16,13 +21,15 @@ export const Skills = () => {
     <div id="skills" className=" py-[min(20%,20vh)] min-h-[40vh] relative">
       <div className="2xl:full-bleed">
         <div className="relative z-ui">
-          <div className="w-full overflow-hidden h-24 flex items-center">
-            <DynamicMarquee
-              marqueeItems={marqueeItems}
-              downDirection="left"
-              upDirection="right"
-            />
-          </div>
+          {originalItems.length > 0 && (
+            <div className="w-full overflow-hidden h-24 flex items-center">
+              <DynamicMarquee
+                marqueeItems={marqueeItems}
+                downDirection="left"
+                upDirection="right"
+              />
+            </div>
+          )}
         </div>
         <div className="gradient-circle -translate-half absolute" />
       </div>
@@ -38,4 +45,4 @@ export const Skills = () => {
       </GridWrapper>
     </div>
   );
-};
+}

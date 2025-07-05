@@ -8,7 +8,7 @@ import { GridWrapper } from "../ui/grid-utils";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-export const About = () => {
+export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -67,17 +67,21 @@ export const About = () => {
   }, []);
 
   return (
-    <GridWrapper>
-      <div
-        ref={containerRef}
-        className="col-span-2 -col-end-1 p-spacer space-y-6 lg:text-2xl z-ui"
-      >
-        {portfolioData.content.about.map((paragraph, index) => (
-          <p key={index} className="leading-relaxed">
-            {paragraph}
-          </p>
-        ))}
-      </div>
-    </GridWrapper>
+    <>
+      {portfolioData.content.about.length > 0 && (
+        <GridWrapper>
+          <div
+            ref={containerRef}
+            className="col-span-2 -col-end-1 p-spacer space-y-6 lg:text-2xl z-ui"
+          >
+            {portfolioData.content.about.map((paragraph, index) => (
+              <p key={index} className="leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </GridWrapper>
+      )}
+    </>
   );
-};
+}

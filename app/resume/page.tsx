@@ -282,7 +282,7 @@ function SkillsSection({ skills }: SkillsSectionProps) {
       <div className="p-spacer flex flex-col gap-8 break-inside-avoid border-b border-b-borders last:border-b-0">
         <h2 className="text-xl font-medium text-accent">{"Skills & Tools"}</h2>
         <div className="flex flex-col gap-6">
-          {skills.languages.length && (
+          {skills.languages.length > 0 && (
             <div>
               <p className="mb-3 text-lg">Languages</p>
               <div className="flex gap-3 flex-wrap">
@@ -293,7 +293,7 @@ function SkillsSection({ skills }: SkillsSectionProps) {
             </div>
           )}
 
-          {skills.technologies.length && (
+          {skills.technologies.length > 0 && (
             <div>
               <p className="mb-3 text-lg">Technologies</p>
               <div className="flex gap-3 flex-wrap">
@@ -304,7 +304,7 @@ function SkillsSection({ skills }: SkillsSectionProps) {
             </div>
           )}
 
-          {skills.tools.length && (
+          {skills.tools.length > 0 && (
             <div>
               <p className="mb-3 text-lg">Tools</p>
               <div className="flex gap-3 flex-wrap">
@@ -394,9 +394,13 @@ export default function ResumePage() {
   return (
     <ResumeLayout>
       <ResumeHeader personalInfo={data.personalInfo} />
-      <ExperienceSection workExperience={data.workExperience} />
-      <ProjectSection projects={ProjectData} />
-      <EducationSection education={data.education} />
+      {data.workExperience.length > 0 && (
+        <ExperienceSection workExperience={data.workExperience} />
+      )}
+      {ProjectData.length > 0 && <ProjectSection projects={ProjectData} />}
+      {data.education.length > 0 && (
+        <EducationSection education={data.education} />
+      )}
       <SkillsSection skills={data.skills} />
     </ResumeLayout>
   );

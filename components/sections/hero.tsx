@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { MatrixButton } from "../ui/button";
 import { GridWrapper } from "../ui/grid-utils";
 
-export const Hero = () => {
+export default function Hero() {
   const heroRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -200,4 +200,4 @@ export const Hero = () => {
       </GridWrapper>
     </div>
   );
-};
+}
