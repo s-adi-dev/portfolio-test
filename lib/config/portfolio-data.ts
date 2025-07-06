@@ -36,13 +36,18 @@ const portfolioData: PortfolioConfig = {
   socialLinks: [
     {
       platform: SocialPlatform.GITHUB,
-      url: "https://github.com/s-aditya-dev",
-      username: "s-aditya-dev",
+      url: "https://github.com/s-adi-dev",
+      username: "s-adi-dev",
     },
     {
       platform: SocialPlatform.LINKEDIN,
       url: "https://linkedin.com/in/adityasingh-dev",
       username: "adityasingh-dev",
+    },
+    {
+      platform: SocialPlatform.REDDIT,
+      url: "https://www.reddit.com/user/aditya-dev/",
+      username: "aditya-dev",
     },
     {
       platform: SocialPlatform.TWITTER,
@@ -51,20 +56,8 @@ const portfolioData: PortfolioConfig = {
     },
     {
       platform: SocialPlatform.TELEGRAM,
-      url: "https://t.me/adityasingh",
-      username: "adityasingh",
-    },
-    {
-      platform: SocialPlatform.YOUTUBE,
-      url: "https://discordapp.com/users/aditya#1234",
-      username: "aditya#1234",
-      displayName: "Aditya Singh",
-    },
-    {
-      platform: SocialPlatform.DISCORD,
-      url: "https://discordapp.com/users/aditya#1234",
-      username: "aditya#1234",
-      displayName: "Aditya Singh",
+      url: "https://t.me/s_adi_dev",
+      username: "s_adi_dev",
     },
   ],
 

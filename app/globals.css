@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 :root {
+  /* accent color */
+  --accent-hex: #d7ef76;
+  /* --accent-hex: #e08537; */
+  /* --accent-hex: #f6e463; */
+  --accent: oklch(from var(--accent-hex) l c h);
+
   /* Color palette */
   --background: oklch(0.1448 0 0);
   --foreground: oklch(1 0 0);
@@ -8,12 +14,6 @@
   --secondary: oklch(0.2046 0 0);
   --muted: oklch(0.7161 0 0);
   --borders: oklch(0.2768 0 0);
-
-  /* original color */
-  --accent-hex: #d7ef76;
-  /* --accent-hex: #f6e463; */
-  /* --accent-hex: #e08537; */
-  --accent: oklch(from var(--accent-hex) l c h);
 
   /* Spacings & Sizing */
   --spacer: 1.25rem;
@@ -51,7 +51,11 @@
 }
 
 @utility full-bleed {
-  margin-inline: calc(((100svw - var(--container-max-width)) / 2) * -1);
+  margin-inline: calc(((100dvw - var(--container-max-width)) / 2) * -1);
+}
+
+@utility scroll-stable {
+  scrollbar-gutter: stable both-edges;
 }
 
 @utility menu-bar {

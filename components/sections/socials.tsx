@@ -78,7 +78,7 @@ const MarqueeItem = ({ data }: { data: SocialLink }) => {
 
 const SocialItem = ({ data }: { data: SocialLink }) => {
   return (
-    <li id={data.platform} className="relative z-ui">
+    <li id={data.platform} className="relative z-ui  2xl:full-bleed">
       <Link
         href={data.url}
         target="_blank"

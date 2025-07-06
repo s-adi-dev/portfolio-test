@@ -116,7 +116,7 @@ function TechnologiesList({ technologies }: TechnologiesListProps) {
   const formatTechnologies = () => {
     return technologies.map((tech, index) => (
       <span key={index}>
-        <span className="text-accent font-medium">{tech}</span>
+        <span className="text-accent font-semibold">{tech}</span>
         {index < technologies.length - 2 && ", "}
         {index === technologies.length - 2 && " and "}
       </span>

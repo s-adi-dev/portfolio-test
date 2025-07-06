@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="2xl:scroll-stable">
       <body
         className={`${monumentFont.variable} ${monoramaFont.variable} ${primaryFont.variable} antialiased selection:bg-accent selection:text-background text-foreground bg-background font-primary`}
       >
