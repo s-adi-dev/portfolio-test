@@ -240,7 +240,7 @@ function ProjectSection({ projects }: ProjectSectionProps) {
             </div>
           ))}
         </div>
-        <div className="flex gap-4 flex-wrap gap-y-4">
+        <div className="flex gap-4 flex-wrap gap-y-4 print:hidden">
           <div className="flex items-center gap-2">
             <Star />
             <p>
