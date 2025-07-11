@@ -1,3 +1,6 @@
+import portfolioData from "./config/portfolio-data";
+import ProjectData from "./config/project-data";
+
 // lib/navigation.ts
 export interface NavItemType {
   label: string;
@@ -7,24 +10,90 @@ export interface NavItemType {
   isHome?: boolean; // New flag for home button
 }
 
+interface AllNavItemType extends NavItemType {
+  type: "primary" | "secondary";
+  show: boolean;
+}
+
 // Navigation items configuration - can be reused in header and footer
-export const PRIMARY_NAV_ITEMS: NavItemType[] = [
-  { label: "Home", href: "/", isHome: true }, // Added isHome flag
-  // { label: "Blogs", href: "#blogs", isAnchor: true },
-  { label: "Projects", href: "#projects", isAnchor: true },
-  { label: "Experience", href: "#experience", isAnchor: true },
-  // { label: "Works", href: "#works", isAnchor: true },
+const NAV_ITEMS: AllNavItemType[] = [
+  { label: "Home", href: "/", isHome: true, type: "primary", show: true },
+  {
+    label: "Projects",
+    href: "#projects",
+    isAnchor: true,
+    type: "primary",
+    show: ProjectData.length > 0,
+  },
+  {
+    label: "Blogs",
+    href: "#blogs",
+    isAnchor: true,
+    type: "primary",
+    show: false,
+  },
+  {
+    label: "Experience",
+    href: "#experience",
+    isAnchor: true,
+    type: "primary",
+    show: portfolioData.workExperience.length > 0,
+  },
+  {
+    label: "Works",
+    href: "#works",
+    isAnchor: true,
+    type: "primary",
+    show: false,
+  },
+  {
+    label: "Skills",
+    href: "#skills",
+    isAnchor: true,
+    type: "secondary",
+    show:
+      portfolioData.skills.tools.length > 0 ||
+      portfolioData.skills.languages.length > 0 ||
+      portfolioData.skills.technologies.length > 0,
+  },
+  {
+    label: "Socials",
+    href: "#socials",
+    isAnchor: true,
+    type: "secondary",
+    show: portfolioData.socialLinks.length > 0,
+  },
+  {
+    label: "Resume",
+    href: "/resume",
+    isExternal: true,
+    type: "secondary",
+    show: true,
+  },
 ];
 
-export const SECONDARY_NAV_ITEMS: NavItemType[] = [
-  // { label: "Experience", href: "#experience", isAnchor: true },
-  { label: "Skills", href: "#skills", isAnchor: true },
-  { label: "Socials", href: "#socials", isAnchor: true },
-  { label: "Resume", href: "/resume", isExternal: true },
-];
+export const PRIMARY_NAV_ITEMS = (): NavItemType[] => {
+  return NAV_ITEMS.filter((item) => item.type === "primary" && item.show).map(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    ({ type: _type, show: _show, ...rest }) => rest,
+  );
+};
 
-// All navigation items combined for easy access
-export const ALL_NAV_ITEMS = [...PRIMARY_NAV_ITEMS, ...SECONDARY_NAV_ITEMS];
+// Filter secondary nav items
+export const SECONDARY_NAV_ITEMS = (): NavItemType[] => {
+  return NAV_ITEMS.filter((item) => item.type === "secondary" && item.show).map(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    ({ type: _type, show: _show, ...rest }) => rest,
+  );
+};
+
+// Or if you want to get all visible nav items regardless of type
+export const ALL_NAV_ITEMS = (): NavItemType[] => {
+  return NAV_ITEMS.filter((item) => item.show).map(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    ({ type: _type, show: _show, ...rest }) => rest,
+  );
+};
 
 // Navigation constants
 export const NAVIGATION_CONSTANTS = {

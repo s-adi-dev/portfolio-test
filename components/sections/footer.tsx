@@ -162,7 +162,7 @@ const FooterGridContent = () => {
           <div className="flex justify-between text-left">
             {/* First column - Primary navigation items */}
             <ul className="flex flex-col gap-2 md:gap-4 xl:gap-6">
-              {PRIMARY_NAV_ITEMS.map((item, index) => (
+              {PRIMARY_NAV_ITEMS().map((item, index) => (
                 <NavItem
                   key={item.label}
                   item={item}
@@ -175,11 +175,11 @@ const FooterGridContent = () => {
 
             {/* Second column - Secondary navigation items */}
             <ul className="flex flex-col gap-2 md:gap-4 xl:gap-6">
-              {SECONDARY_NAV_ITEMS.map((item, index) => (
+              {SECONDARY_NAV_ITEMS().map((item, index) => (
                 <NavItem
                   key={item.label}
                   item={item}
-                  index={index + PRIMARY_NAV_ITEMS.length}
+                  index={index + PRIMARY_NAV_ITEMS().length}
                   showIndex={false} // Hide index numbers in footer
                   className="hover:text-accent active:text-accent transition-colors duration-200"
                 />

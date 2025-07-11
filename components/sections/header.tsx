@@ -185,7 +185,7 @@ export default function Header() {
           <GridLines />
           <nav className="px-spacer">
             <ul className="w-full flex items-center justify-end gap-6 py-6">
-              {PRIMARY_NAV_ITEMS.map((item, index) => (
+              {PRIMARY_NAV_ITEMS().map((item, index) => (
                 <NavItem
                   key={item.label}
                   item={item}
@@ -203,7 +203,7 @@ export default function Header() {
       </div>
       <GridWrapper
         className={cn(
-          `px-spacer overflow-hidden transition-all ease-in-out origin-top`,
+          `px-spacer container-main overflow-hidden transition-all ease-in-out origin-top`,
           isMenuExpanded ? "max-h-96" : "max-h-0",
         )}
         style={{
@@ -211,7 +211,7 @@ export default function Header() {
         }}
       >
         <ul className="-col-end-1 p-spacer bg-secondary flex flex-col gap-6 rounded-lg">
-          {SECONDARY_NAV_ITEMS.map((item, index) => (
+          {SECONDARY_NAV_ITEMS().map((item, index) => (
             <NavItem
               key={item.label}
               item={item}

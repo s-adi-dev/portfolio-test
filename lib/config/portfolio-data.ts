@@ -1,119 +1,101 @@
-import { PortfolioConfig, SocialPlatform } from "./portfolio-types";
+import { PortfolioConfig, SocialPlatform } from "./portfolio-types"; // Update path as needed
 
-const portfolioData: PortfolioConfig = {
+const dummyPortfolioConfig: PortfolioConfig = {
   personalInfo: {
-    firstName: "Aditya",
-    lastName: "Singh",
-    title: "Bakchod Developer",
-    location: "Mumbai, India",
-    email: "sr.aditya.dev@gmail.com",
+    firstName: "John",
+    lastName: "Doe",
+    title: "Software Engineer",
+    location: "San Francisco, CA",
+    email: "john.doe@example.com",
   },
 
   content: {
-    tagline:
-      "a self-taught front-end web developer based in Maharashtra, India, with a passion for building clean and performant web apps",
+    tagline: "Innovating with code and creativity.",
     about: [
-      "Hi there! I'm a developer who loves digging into how stuff works on the web and getting all excited about making websites run faster. I'm always on the lookout to learn more about web development and what's new in the tech world. ",
-      "My current jam is delving into React performance, exploring best coding practices and leveling up my skills. ",
-      "When I'm not busy churning out code, you can probably find me watching anime or tinkering around with my Linux setup. ",
+      "I'm John Doe, a passionate software engineer with a focus on frontend development and cloud infrastructure.",
+      "I enjoy building performant, user-friendly applications using modern technologies.",
+      "When I'm not coding, I explore design systems, write technical blogs, and contribute to open-source projects.",
     ],
-    svgLink: "https://schar.dev/images/saurabh-charde.svg",
+    svgLink: "https://dummyimage.com/600x400/000/fff&text=SVG+Illustration",
   },
 
   skills: {
-    languages: ["TypeScript", "JavaScript", "Python", "SQL"],
-    technologies: [
-      "React",
-      "Next.js",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Tailwind CSS",
-    ],
-    tools: ["Git", "Neovim", "Linux", "VS Code", "Figma", "Postman"],
+    languages: ["JavaScript", "TypeScript", "Go", "Ruby"],
+    technologies: ["React", "Next.js", "Rails", "Node.js", "GraphQL", "AWS"],
+    tools: ["Git", "Docker", "Webpack", "Postman", "Figma"],
   },
 
   socialLinks: [
     {
       platform: SocialPlatform.GITHUB,
-      url: "https://github.com/s-adi-dev",
-      username: "s-adi-dev",
+      url: "https://github.com/johndoe",
+      username: "johndoe",
     },
     {
       platform: SocialPlatform.LINKEDIN,
-      url: "https://linkedin.com/in/adityasingh-dev",
-      username: "adityasingh-dev",
-    },
-    {
-      platform: SocialPlatform.REDDIT,
-      url: "https://www.reddit.com/user/aditya-dev/",
-      username: "aditya-dev",
+      url: "https://linkedin.com/in/johndoe",
+      username: "johndoe",
     },
     {
       platform: SocialPlatform.TWITTER,
-      url: "https://twitter.com/adityadev",
-      username: "adityadev",
+      url: "https://twitter.com/johndoe",
+      username: "johndoe",
     },
     {
-      platform: SocialPlatform.TELEGRAM,
-      url: "https://t.me/s_adi_dev",
-      username: "s_adi_dev",
+      platform: SocialPlatform.INSTAGRAM,
+      url: "https://instagram.com/john.codes",
+      username: "john.codes",
+      displayName: "John Codes",
     },
   ],
 
   workExperience: [
     {
-      company: "TechNova Labs",
-      position: "Full Stack Developer",
-      startDate: new Date("2023-01-01"),
-      endDate: null,
-      description:
-        "Building modern web applications for startups and enterprises.",
+      company: "TechCorp Inc.",
+      position: "Frontend Developer",
+      description: "Built and maintained enterprise-scale React applications.",
+      startDate: new Date("2021-05-01"),
+      endDate: new Date("2023-04-01"),
       achievements: [
-        "Redesigned core dashboard improving performance by 30%",
-        "Built reusable component library with Tailwind and ShadCN",
-        "Integrated real-time chat using WebSocket",
+        "Reduced page load time by 40% by optimizing bundle size",
+        "Led migration from Redux to React Query",
+        "Created internal component library with Storybook",
       ],
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "Prisma",
-        "PostgreSQL",
-        "Tailwind CSS",
-      ],
+      technologies: ["React", "TypeScript", "Tailwind", "Storybook"],
     },
     {
-      company: "OpenSource Contributions",
-      position: "Contributor",
-      startDate: new Date("2022-05-01"),
-      endDate: new Date("2022-12-01"),
-      description:
-        "Actively contributed to open-source projects in the React and Node ecosystem.",
+      company: "CloudSoft Solutions",
+      position: "Full Stack Developer",
+      description: "Developed full-stack web apps with GraphQL backend.",
+      startDate: new Date("2023-05-01"),
+      endDate: null,
       achievements: [
-        "Merged 10+ PRs in high-traffic repositories",
-        "Improved documentation and onboarding experience",
+        "Built real-time dashboard for monitoring IoT devices",
+        "Implemented CI/CD pipeline using GitHub Actions and AWS",
+        "Created GraphQL APIs with proper caching strategies",
       ],
-      technologies: ["React", "Node.js", "Markdown", "Git"],
+      technologies: ["Next.js", "GraphQL", "Docker", "AWS"],
     },
   ],
 
   education: [
     {
-      institution: "Indian Institute of Technology",
-      degree: "B.Tech in Computer Science",
-      startDate: new Date("2019-07-01"),
-      endDate: new Date("2023-06-30"),
+      institution: "University of Technology",
+      degree: "Bachelor of Science in Computer Science",
+      startDate: new Date("2017-08-01"),
+      endDate: new Date("2021-05-01"),
     },
   ],
 
   footerMarquee: [
-    "Front End Web Developer",
-    "Not A UI/UX Guy",
-    "Linux Enthusiast",
-    "Weeb",
+    "Lifelong Learner",
+    "Open Source Advocate",
+    "React Enthusiast",
+    "Cloud Native",
+    "Code, Coffee, Repeat",
   ],
 
   includeGitHubInProjects: true,
 };
 
-export default portfolioData;
+export default dummyPortfolioConfig;
